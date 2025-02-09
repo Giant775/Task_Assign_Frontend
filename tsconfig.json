@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "ESNext", // Ensure this is set to a modern version
+    "lib": ["ESNext", "DOM"], // Add ES2015 or later libraries
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "strict": true,
+    "jsx": "preserve",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "types": ["vite/client", "framer-motion"]
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"]
+}
