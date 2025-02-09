@@ -5,7 +5,7 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 
 function App() {
-  
+  console.log("ENV:", import.meta.env.VITE_REACT_APP_API_URL);
   return (
    <BrowserRouter>
     <Routes>
