@@ -1,14 +1,12 @@
 
 export interface User {
-    id: string;
     email: string;
-    name: string;
-    grade: number;
+    grade: number | null;
 }
 
 export interface AuthResponse {
     user: User;
-    token: string;
+    // token: string
 }
 
 export interface Comment {
@@ -37,8 +35,3 @@ export interface ErrorResponse {
 }
 
 
-export type FormType = {
-    name?: string;
-    email: string;
-    password: string;
-}

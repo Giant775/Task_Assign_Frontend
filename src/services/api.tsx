@@ -57,7 +57,11 @@ export const apiService = {
     signup: async (name: string, email: string, password: string): Promise<AuthResponse> => {
         const response = await api.post<AuthResponse>('/auth/signup', {name, email, password});
         return response.data;
-    }
+    },
 
+    me: async (): Promise<AuthResponse> => {
+        const response= await api.get<AuthResponse>('/auth/me');
+        return response.data;
+    }
     // Tasks
 }
