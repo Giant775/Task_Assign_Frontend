@@ -5,7 +5,6 @@ import Dashboard from "./pages/Dashborad";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Tasks from "./pages/Tasks";
-import Profile from "./pages/Profile";
 
 
 function App() {
@@ -19,7 +18,6 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/tasks" element={<Tasks />} />
-          <Route path="/profile" element={<Profile />} />
         </Routes>
       </BrowserRouter>
     </UserProvider>

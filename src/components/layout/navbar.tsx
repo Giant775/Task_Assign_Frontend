@@ -6,7 +6,6 @@ const NavBar = () => {
             <span className="p-2 cursor-pointer"><Link to="/">Home</Link></span>
             <span className="p-2 cursor-pointer"><Link to="/login">Login</Link></span>
             <span className="p-2 cursor-pointer"><Link to="/tasks">Tasks</Link></span>
-            <span className="p-2 cursor-pointer"><Link to="/profile">Profile</Link></span>
         </div>
     );
 }

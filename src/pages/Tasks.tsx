@@ -2,6 +2,8 @@ import { useEffect } from "react";
 import { useUser } from "../hooks/useUser"
 import { useNavigate } from "react-router-dom";
 import NavBar from "../components/layout/navbar";
+import TaskList from "../components/task/TaskList";
+import { TaskProvider } from "../contexts/TaskProvider";
 
 const Tasks = () => {
     const {user, isLoading} = useUser();
@@ -21,7 +23,9 @@ const Tasks = () => {
     return (
         <>
             <NavBar />
-            <p>{user?.email}</p>
+            <TaskProvider>
+                <TaskList />
+            </TaskProvider>
         </>
     )
 }

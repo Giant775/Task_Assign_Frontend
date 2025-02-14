@@ -1,5 +1,5 @@
 import axios, { AxiosError, AxiosInstance, AxiosResponse } from "axios";
-import { User, AuthResponse, Task, Comment, ErrorResponse } from "../types";
+import { AuthResponse, Task, ErrorResponse } from "../types";
 
 // Create axios instance
 const api: AxiosInstance = axios.create({
@@ -62,6 +62,28 @@ export const apiService = {
     me: async (): Promise<AuthResponse> => {
         const response= await api.get<AuthResponse>('/auth/me');
         return response.data;
-    }
+    },
     // Tasks
+    getTasks: async (): Promise<Task[]> => {
+        const response = await api.get<Task[]>('/tasks');
+        return response.data;
+    },
+
+    createTask: async (task: Omit<Task, 'id' | 'createdAt' | 'updatedAt'>): Promise<Task> => {
+        console.log("Tasks request send.");
+        const response = await api.post<Task>('/tasks', task);
+        console.log("Response from the Tasks API:", response);
+        return response.data;
+    },
+
+    updateTask: async (id: string, updates: Partial<Task>): Promise<Task> => {
+        console.log("Update request send:", updates);
+        const response = await api.patch<Task>(`/tasks/${id}`, updates);
+        return response.data;
+    },
+
+    deleteTask: async (id: string): Promise<void> => {
+        await api.delete(`/tasks/${id}`);
+    },
+
 }

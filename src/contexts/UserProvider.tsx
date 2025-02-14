@@ -11,7 +11,7 @@ export const UserProvider = ({ children }: {children: ReactNode }) => {
         apiService.me().then((response) => {
             console.log("Response:", response);
             if (response.user) {
-                setUser({email: response.user.email, grade: response.user.grade});
+                setUser({email: response.user.email, grade: response.user.grade, id: response.user.id});
             }
         })
         .catch(() => setUser(null))

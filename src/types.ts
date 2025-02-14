@@ -1,5 +1,6 @@
 
 export interface User {
+    id: string;
     email: string;
     grade: number | null;
 }
@@ -21,7 +22,7 @@ export interface Task {
     title: string;
     description: string;
     status: 'todo' | 'in progress' | 'completed';
-    assignee?: string; // User ID
+    assignee?: {_id: string, email: string}; // User ID
     dueDate?: Date;
     labels?: string[];
     comments?: Comment[];
@@ -32,6 +33,11 @@ export interface Task {
 export interface ErrorResponse {
     message: string;
     statusCode: number;
+}
+
+export interface Assignee {
+    _id: string;
+    email: string;
 }
 
 
