@@ -3,7 +3,7 @@ import { AuthResponse, Task, ErrorResponse } from "../types";
 
 // Create axios instance
 const api: AxiosInstance = axios.create({
-    baseURL: import.meta.env.VITE_REACT_APP_API_URL || 'http://localhost3001/api',
+    baseURL: import.meta.env.VITE_REACT_APP_API_URL || 'https://task-assign-backend.onrender.com//api',
     withCredentials: true,
     headers: {
         'Content-Type': 'application/json',
