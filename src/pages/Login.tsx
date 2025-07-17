@@ -22,7 +22,7 @@ const Login = () => {
             alert("Invalid credential");
             return;
         }
-        const user: User = {email: res.user.email, grade: res.user.grade};
+        const user: User = {id: res.user.id, email: res.user.email, grade: res.user.grade};
         setUser(user);
         navigate("/");
         
