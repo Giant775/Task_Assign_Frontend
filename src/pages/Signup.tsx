@@ -28,7 +28,8 @@ const Signup = () => {
             alert("Register failed.");
             return;
         }
-        const user: User = {email: "", grade: null};
+        const user: User = {id: "", email: "", grade: null};
+        user.id = res.user.id;
         user.email = res.user.email;
         user.grade = res.user.grade;
         setUser(user);
